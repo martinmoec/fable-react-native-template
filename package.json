@@ -25,6 +25,9 @@
     "react-test-renderer": "16.5.0",
     "react-transform-hmr": "1.0.4"
   },
+  "resolutions": {
+    "react-devtools-core": "3.4.3"
+  },
   "jest": {
     "preset": "react-native"
   }

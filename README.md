@@ -42,3 +42,8 @@ In project root
         - E.g 
             - Products: ```build/Build/Products```
             - Intermediates: ```build/Build/Intermediates.noindex```
+
+### Android
+
+* Licenses not accepted
+    - run ```<Android folder>/sdk/tools/bin/sdkmanager --licenses``` and accept all

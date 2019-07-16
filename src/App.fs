@@ -1,8 +1,10 @@
 module App
 
 open Elmish
-open Fable.Import.ReactNative
-open Fable.Helpers.ReactNative
+open Elmish.React
+open Elmish.ReactNative
+open Elmish.HMR
+open Fable.ReactNative
 
 type Model = {
     Counter : int
@@ -44,16 +46,15 @@ let update (msg : Message ) ( model : Model ) : Model * Cmd<Message> =
         model, Cmd.none
 
 // rendering views with ReactNative
-module R = Fable.Helpers.ReactNative
-module P = Fable.Helpers.ReactNative.Props
+module R = Fable.ReactNative.Helpers
+module P = Fable.ReactNative.Props
 
 
 let view model ( dispatch : Dispatch<Message> ) =
-    
+
+    // main view element
     R.view [
-        //Styles.settingsStyle
         P.ViewProperties.Style [ 
-            //P.AlignSelf P.Alignment.Stretch
             P.ShadowColor "#333333"
             P.FlexStyle.Flex 1.0 
             P.ShadowOpacity 0.8
@@ -86,7 +87,7 @@ let view model ( dispatch : Dispatch<Message> ) =
             ]
             P.TextInput.Placeholder "Enter text here"
             P.TextInput.PlaceholderTextColor "#aaaaaa"
-            P.TextInput.OnChangeText ( fun inpt -> dispatch ( UpdateInput inpt ) )
+            P.TextInput.OnChangeText ( UpdateInput >> dispatch ) 
         ]
 
         R.text [
@@ -101,12 +102,8 @@ let view model ( dispatch : Dispatch<Message> ) =
         ] model.Input
     ]
 
-open Elmish.ReactNative
-open Elmish.HMR
-
-// App
+// initialize app
 Program.mkProgram init update view
 |> Program.withConsoleTrace
-|> Program.withHMR
 |> Program.withReactNative "ReactNativeApp"
 |> Program.run

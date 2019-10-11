@@ -74,3 +74,8 @@ Remember to build JavaScript files. If the package manager does not automaticall
 
 * Licenses not accepted
     - run ```<Android folder>/sdk/tools/bin/sdkmanager --licenses``` and accept all
+
+* Device unable to load script from asset
+    1. ```mkdir android/app/src/main/assets```
+    2. ```react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res```
+    3. ```react-native run-android```

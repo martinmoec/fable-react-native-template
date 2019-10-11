@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeApp",
+  "name": "reactnativeapp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,15 +11,18 @@
   "dependencies": {
     "@react-native-community/async-storage": "1.4.0",
     "buffer": "5.2.1",
-    "react": "16.8.6",
+    "react": "16.9.0",
     "react-native": "0.60.3"
   },
   "devDependencies": {
-    "@babel/core": "7.5.4",
-    "@babel/runtime": "7.5.4",
+    "@babel/core": "7.6.4",
+    "@babel/runtime": "7.6.3",
     "fable-compiler": "2.3.8",
     "fable-splitter": "2.1.8",
-    "metro-react-native-babel-preset": "0.55.0",
-    "react-test-renderer": "16.8.6"
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }

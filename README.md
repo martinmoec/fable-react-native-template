@@ -28,8 +28,7 @@ brew cask install adoptopenjdk8
 ## Setup
 After cloning the respository cd into project root
 * ```yarn```
-* ```.paket/paket.exe init```
-* ```.paket/paket.exe install```
+* ```paket install```
 * ```cd src```
 * ```dotnet restore``` 
 
